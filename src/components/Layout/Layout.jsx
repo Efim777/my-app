@@ -5,16 +5,32 @@ const Layout = () => {
     return (
         <>
             <header className='header'>
-                <NavLink className='header__link' to="/">Home</NavLink>
-                <NavLink className='header__link' to="/todos">Todos</NavLink>
-                <NavLink className='header__link' to="/about">About</NavLink>
+                <nav>
+                    <div className="container">
+                        <ul className='header__list'>
+                            <li className='header__item'>
+                                <NavLink className='header__link' to="/">Home</NavLink>
+                            </li>
+                            <li className='header__item'>
+                                <NavLink className='header__link' to="/todos">Todos</NavLink>
+                            </li>
+                            <li className='header__item'>
+                                <NavLink className='header__link' to="/favorite">Favorite</NavLink>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
             </header>
 
-            <div className="main">
+            <div className="container">
                 <Outlet />
             </div>
 
-            <footer>2021</footer>
+            <footer className='footer'>
+                <div className="container">
+                    2<span className='footer__number'>0</span>2<span className='footer__number'>1</span>
+                </div>
+            </footer>
         </>
     )
 }

@@ -1,0 +1,44 @@
+.header{
+    background: #000;
+    padding: 50px 0;
+}
+
+.header__list{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__item{
+    margin-right: 15px;
+}
+
+.header__link{
+    color: #fff;
+    font-size: 18px;
+    line-height: 100%;
+    text-transform: uppercase;
+}
+
+.header__link:hover{
+    border: 1px solid #f3ca20;
+    height: 2px;
+    border-radius: 15px;
+
+}
+
+.header__link.active{
+    color: #f3ca20;
+}
+
+.footer{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 50px;
+
+    &__number{
+        color: #f3ca20;
+    }
+
+}

@@ -4,7 +4,7 @@ import './pages.scss';
 const HomePage = () => {
     return(
         <div>
-            <h1 className='title'>HomePage</h1>
+            <h1 className='title'>Home</h1>
             {/* <img src={Nature} alt="Nature" /> */}
         </div>
     )

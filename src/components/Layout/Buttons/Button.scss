@@ -1,0 +1,17 @@
+.button{
+    border-radius: 15px;
+    border: 1px solid #f3ca20;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 16px;
+    line-height: 16px;
+    background: transparent;
+    cursor: pointer;
+    max-width: 100px;
+    width: 100%;
+
+    &:not(:last-child){
+        margin-right: 15px;
+    }
+}
