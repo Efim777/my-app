@@ -1,18 +1,35 @@
-import TodosList from "../components/Layout/Todos/TodosList.jsx"
+import { useEffect, useState } from "react"
+import TodosList from "../components/Layout/Todos/TodosList"
+import { API } from "../utils/api";
+import CreateTodo from "../components/Layout/Todos/CreateTodo";
 
 const TodosPage = () => {
-    const todos = [
-        {id: 1, title: 'Todo 1', checked: false },
-        {id: 2, title: 'Todo 2', checked: true },
-        {id: 3, title: 'Todo 3', checked: false },
-    ]
+    const [todos, setTodos] = useState ([]);
+    const [loading, setLoading] = useState(false);
 
+    useEffect(() => {
+        setLoading(true)
+        API.get('/posts')
+            .then(({data}) => setTodos(data))
+            .catch(e => console.error(e))
+            .finally(setLoading(false))
+    }, [])
+    
     return (
         <div>
             <h1 className='title'>Todos</h1>
-            <TodosList todos={todos} />
+            <CreateTodo />
+            {
+                loading
+                    ?
+                    (<h2>Loading...</h2>)
+                    :
+                    (
+                        <TodosList todos={todos} setTodos={setTodos} />
+                    )
+            }
         </div>
     )
-}
+} 
 
-export default TodosPage
+export default TodosPage;

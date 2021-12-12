@@ -1,9 +1,11 @@
-import './Button.scss';
+// import './Button.scss';
+import Button from '@mui/material/Button';
 
-function Button({text}) {
+const Buttons = ({text}) => {
     return (
-        <button className='button'>{text}</button>
+        // <button className='button'>{text}</button>
+        <Button variant="outlined">{text}</Button>
     )
 }
 
-export default Button
+export default Buttons

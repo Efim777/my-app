@@ -32,3 +32,10 @@
     display: flex;
     width: 215px;
 }
+
+.todos-create{
+    &__input{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}

@@ -5,8 +5,8 @@ const Layout = () => {
     return (
         <>
             <header className='header'>
-                <nav>
-                    <div className="container">
+                <div className="container">
+                    <nav>
                         <ul className='header__list'>
                             <li className='header__item'>
                                 <NavLink className='header__link' to="/">Home</NavLink>
@@ -18,8 +18,8 @@ const Layout = () => {
                                 <NavLink className='header__link' to="/favorite">Favorite</NavLink>
                             </li>
                         </ul>
-                    </div>
-                </nav>
+                    </nav>
+                </div>
             </header>
 
             <div className="container">
