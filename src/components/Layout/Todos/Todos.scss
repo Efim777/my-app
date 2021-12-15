@@ -19,18 +19,67 @@
     cursor: pointer;
 }
 
-.list__input{
-    margin-right: 12px;
-}
-
 .list__title{
     margin-left: 12px;
 
 }
 
+.list__title-done{
+    text-decoration: line-through;
+    margin-left: 12px;
+}
+
 .list__buttons{
     display: flex;
-    width: 215px;
+    align-items: center;
+}
+
+.button{
+    cursor: pointer;
+}
+
+.list__checkbox{
+    appearance: none;
+}
+
+.list__label-checkbox {
+    position: relative;
+    cursor: pointer;
+    margin-right: 60px;
+}
+ 
+.list__label-checkbox:before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 45px;
+    height: 20px;
+    border-radius: 13px;
+    background: #333333;
+    box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.4);
+    transition: 0.2s;
+}
+ 
+.list__label-checkbox:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 2px;
+    width: 18px;
+    height: 18px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    transition: 0.2s;
+}
+
+.list__checkbox:checked + .list__label-checkbox::after {
+    left: 24px;
+}
+ 
+.list__checkbox:checked + .list__label-checkbox::before {
+    background: #f3ca20;
 }
 
 .todos-create{
@@ -39,3 +88,44 @@
         margin-bottom: 30px;
     }
 }
+
+.todos-create {
+    margin-bottom: 25px;
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    background: #0004;
+    padding: 15px;
+ 
+    &__input {
+       border: 1px solid #ffffff;
+       padding: 6px 10px;
+       margin-right: 20px;
+       width: 100%;
+ 
+       &::placeholder {
+          color: #ffffff;
+       }
+    }
+ 
+    &__error {
+       display: none;
+       position: absolute;
+       bottom: -15px;
+       font-size: 12px;
+       line-height: 12px;
+       left: 0;
+       color: red;
+ 
+       &.show {
+          display: block;
+       }
+    }
+ 
+    &__button {
+       cursor: pointer;
+    }
+ }

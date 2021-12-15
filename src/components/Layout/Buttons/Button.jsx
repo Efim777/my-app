@@ -1,9 +1,9 @@
-// import './Button.scss';
+import './Button.scss';
 import Button from '@mui/material/Button';
 
 const Buttons = ({text}) => {
     return (
-        // <button className='button'>{text}</button>
+        <button className='button'>{text}</button>,
         <Button variant="outlined">{text}</Button>
     )
 }

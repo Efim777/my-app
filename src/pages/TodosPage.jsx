@@ -8,21 +8,21 @@ const TodosPage = () => {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        setLoading(true)
+        setLoading(!loading)
         API.get('/posts')
             .then(({data}) => setTodos(data))
             .catch(e => console.error(e))
-            .finally(setLoading(false))
+            .finally(setLoading(loading))
     }, [])
     
     return (
         <div>
             <h1 className='title'>Todos</h1>
-            <CreateTodo />
+            <CreateTodo setTodos={setTodos} />
             {
                 loading
                     ?
-                    (<h2>Loading...</h2>)
+                    (<h2>Loading...</h2>) 
                     :
                     (
                         <TodosList todos={todos} setTodos={setTodos} />
